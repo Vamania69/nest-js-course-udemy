@@ -1,9 +1,9 @@
 "use client";
-import { ThemeProvider } from "@/components/theme-provider";
+import client from "@/constants/apollo-client";
+import { ApolloProvider } from "@apollo/client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ApolloProvider } from "@apollo/client";
-import client from "@/constants/apollo-client";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +28,16 @@ export default function RootLayout({
       >
         {/* This is to  manage all the req. to the graphql data and manage the cache */}
         <ApolloProvider client={client}>
-          <ThemeProvider
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          > */}
+          <Toaster />
+          {/* <Guard>{children}</Guard> */}
+          {children}
+          {/* </ThemeProvider> */}
         </ApolloProvider>
       </body>
     </html>

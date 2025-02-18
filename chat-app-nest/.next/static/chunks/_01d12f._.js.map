@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://A%3A/personal%20project/udemy/nest-js-course/chat-app-nest/src/app/page.tsx"],"sourcesContent":["\"use client\";\nimport { useRouter } from \"next/navigation\";\n\nexport default function Home() {\n  const router = useRouter();\n  const {user  }\n  return <> {\n\n  }</>\n  \n  ;\n}\n"],"names":[],"mappings":";;;;AACA;;;AADA;;AAGe,SAAS;;IACtB,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IACvB,MAAM,EAAC,IAAI,EAAG;IACd,qBAAO;kBAAE;;AAKX;GARwB;;QACP,qIAAA,CAAA,YAAS;;;KADF"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file://A%3A/personal%20project/udemy/nest-js-course/chat-app-nest/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

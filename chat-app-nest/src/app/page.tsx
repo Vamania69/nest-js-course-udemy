@@ -1,8 +1,16 @@
 "use client";
-import { useRouter } from "next/navigation";
-
+import Navbar from "@/components/common/navbar";
+import dynamic from "next/dynamic";
 export default function Home() {
-  const router = useRouter();
-  router.push("/login");
-  return <div></div>;
+  const DynamicGuard = dynamic(() => import("@/components/auth/guard"), {
+    ssr: false,
+  });
+  return (
+    <>
+      <DynamicGuard>
+        <Navbar />
+        <div>Hello</div>
+      </DynamicGuard>
+    </>
+  );
 }

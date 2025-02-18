@@ -21,6 +21,7 @@ const Auth: React.FC<IAuthProps> = ({
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     submitHandler(email, password);
+    console.log(email, password);
   };
 
   return (

@@ -1,22 +1,31 @@
 "use client";
-import React from "react";
-import Auth from "./auth";
+import { useLoginUser } from "@/app/hooks/use-login-user";
 import Link from "next/link";
-import { useCreateUser } from "@/app/hooks/use-create-user";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import Auth from "./auth";
+import { isAuthenticated } from "@/constants/authenticated";
 
 const Login = () => {
-//   const [createUser] = useCreateUser();
+  const { loginUser, error } = useLoginUser();
+  const router = useRouter();
+  const [isSuccess, setIsSuccess] = useState(false); // Local state to track success
   const submitHandler = async (email: string, password: string) => {
-//     // calling the graphql mutation hook
-//     await createUser({
-//       variables: {
-//         createUserInput: {
-//           email: email,
-//           password: password,
-//         },
-//       },
-//     });
+    try {
+      await loginUser({ email, password }); // Attempt to log in
+      setIsSuccess(true); // Set success state to true
+    } catch (err) {
+      console.error(err); // Log error for debugging
+      // Optionally, handle error state to display to the user
+    }
   };
+
+  // Redirect to homepage after successful login
+  useEffect(() => {
+    if (isSuccess) {
+      router.push("/"); // Redirect to homepage on successful login
+    }
+  }, [isSuccess, router]); // Dependency array includes isSuccess and router
 
   return (
     <div className="h-screen flex justify-center items-center">

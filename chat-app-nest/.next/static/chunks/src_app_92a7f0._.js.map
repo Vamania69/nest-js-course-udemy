@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://A%3A/personal%20project/udemy/nest-js-course/chat-app-nest/src/app/hooks/use-get-me.ts"],"sourcesContent":["import { useEffect, useState } from \"react\";\r\nimport { useQuery, gql } from \"@apollo/client\";\r\nimport { User } from \"../interfaces/user\";\r\n\r\n// this is a gql query that has Me as a query key to fetch the user.\r\nconst GET_ME = gql`\r\n  query Me {\r\n    me {\r\n      id\r\n      email\r\n    }\r\n  }\r\n`;\r\n\r\nconst useGetMe = () => {\r\n  const { data, loading, error } = useQuery<{ me: User }>(GET_ME, {\r\n    fetchPolicy: \"network-only\", // Ensure fresh data is fetched\r\n    context: {\r\n      headers: {\r\n        // Include any additional headers if needed\r\n      },\r\n      credentials: \"include\", // Important: Include credentials (cookies)\r\n    },\r\n  });\r\n\r\n  return {\r\n    user: data?.me,\r\n    loading,\r\n    error,\r\n  };\r\n};\r\n\r\nexport { useGetMe };\r\n"],"names":[],"mappings":";;;AACA;AAAA;;;AAGA,oEAAoE;AACpE,MAAM,SAAS,iJAAA,CAAA,MAAG,CAAC;;;;;;;AAOnB,CAAC;AAED,MAAM,WAAW;;IACf,MAAM,EAAE,IAAI,EAAE,OAAO,EAAE,KAAK,EAAE,GAAG,CAAA,GAAA,mKAAA,CAAA,WAAQ,AAAD,EAAgB,QAAQ;QAC9D,aAAa;QACb,SAAS;YACP,SAAS;YAET;YACA,aAAa;QACf;IACF;IAEA,OAAO;QACL,MAAM,MAAM;QACZ;QACA;IACF;AACF;GAhBM;;QAC6B,mKAAA,CAAA,WAAQ"}},
+    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

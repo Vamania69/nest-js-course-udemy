@@ -11,7 +11,7 @@
 !.yarn/versions
 
 
-chat-app-backend/node_modules
+chat-app-backend-updated/node_modules
 chat-app-backend/.env
 
 chat-app-nest/node_modules

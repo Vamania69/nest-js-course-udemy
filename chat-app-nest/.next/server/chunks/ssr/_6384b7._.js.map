@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://A%3A/personal%20project/udemy/chat-app-nest/src/app/page.tsx"],"sourcesContent":["import { useRouter } from \"next/navigation\";\n\nexport default function Home() {\n  const router = useRouter();\n  router.push(\"/login\");\n  return <div></div>;\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;;;AAEe,SAAS;IACtB,MAAM,SAAS,CAAA,GAAA,qLAAA,CAAA,YAAS,AAAD;IACvB,OAAO,IAAI,CAAC;IACZ,qBAAO,8OAAC;;;;;AACV"}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
